@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JASUNN Growth Solutions | Premium Web Development & Digital Growth</title>
+    <meta name="description" content="We help businesses build trust, improve visibility, and generate more inquiries through professional websites, Google Business Profile optimization, and ongoing support.">
+    <meta name="author" content="Harshdeep Singh">
+    <link rel="canonical" href="https://jasunngrowthsolutions.com">
+    
+    <!-- Open Graph Tags (SEO Improvement) -->
+    <meta property="og:title" content="JASUNN Growth Solutions | Digital Growth Partner">
+    <meta property="og:description" content="Turn your website into a lead-generation machine. Premium web design and local SEO for ambitious businesses, clinics, and consultants.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jasunngrowthsolutions.com">
+    
+    <!-- Local Business & FAQ Schema (SEO Improvement) -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "JASUNN Growth Solutions",
+        "founder": {
+            "@type": "Person",
+            "name": "Harshdeep Singh"
+        },
+        "description": "Helping consultants, healthcare clinics, coaches, and local service businesses establish a strong online presence through premium websites and Google Business Profile optimization.",
+        "url": "https://jasunngrowthsolutions.com",
+        "telephone": "+918738873878",
+        "priceRange": "₹12,999 - ₹29,999",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Gurugram",
+          "addressRegion": "Haryana",
+          "addressCountry": "IN"
+        }
+      }
+    ]
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            900: '#1e3a8a',
+                            950: '#0b1120',
+                        },
+                        dark: {
+                            bg: '#050505',
+                            card: '#111111',
+                            border: '#222222'
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(5, 5, 5, 1) 60%)',
+                        'blue-gradient': 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Utilities */
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Smooth reveal animation classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered delays for flex/grid children */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glass-light {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Text outline for services section */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        .service-row:hover .text-outline {
+            color: #ffffff;
+            -webkit-text-stroke: 1px #ffffff;
+        }
+        
+        /* Accordion transition */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease;
+            opacity: 0;
+        }
+        .accordion-item.active .accordion-content {
+            opacity: 1;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Continuous Marquee Animation */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll { 
+            animation: scroll 30s linear infinite; 
+            width: max-content;
+        }
+        .animate-scroll:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Skip to main content (Accessibility Improvement) -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] bg-brand-600 text-white px-4 py-2 rounded-lg font-bold">
+        Skip to main content
+    </a>
+
+    <!-- Floating WhatsApp Button (Lead Gen Improvement) -->
+    <a href="https://wa.me/918738873878" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-[60] bg-[#25D366] text-white w-14 h-14 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] hover:scale-110 transition-all duration-300 flex items-center justify-center group">
+        <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+        <span class="absolute right-full mr-4 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none hidden md:block">
+            Chat with us
+        </span>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2 z-50">
+                <i class="ph-fill ph-trend-up text-brand-500 text-2xl"></i>
+                JASUNN<span class="font-light opacity-60 hidden sm:inline"> Growth Solutions</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 bg-white/5 backdrop-blur-md px-8 py-3 rounded-full border border-white/10">
+                <a href="#services" class="text-sm text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="#work" class="text-sm text-gray-300 hover:text-white transition-colors">Portfolio</a>
+                <a href="#pricing" class="text-sm text-gray-300 hover:text-white transition-colors">Pricing</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-brand-600 rounded-full hover:bg-brand-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+                    Start Project
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Menu" class="md:hidden text-white p-2 z-50">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-dark-bg/95 backdrop-blur-xl flex-col items-center justify-center gap-8 hidden z-40">
+            <a href="#services" class="mobile-link text-2xl font-medium text-white">Services</a>
+            <a href="#work" class="mobile-link text-2xl font-medium text-white">Portfolio</a>
+            <a href="#pricing" class="mobile-link text-2xl font-medium text-white">Pricing</a>
+            <a href="#contact" class="mobile-link px-8 py-3 mt-4 text-lg font-medium text-white bg-brand-600 rounded-full">Start Project</a>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-hero-glow">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                
+                <!-- Top Hero Row -->
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-20">
+                    <div class="max-w-3xl reveal">
+                        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95] mb-6">
+                            Build <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-white font-serif italic font-normal">Trust.</span><br>
+                            Drive Growth.
+                        </h1>
+                        <div class="flex gap-4 mt-8">
+                            <a href="https://wa.me/918738873878" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"><i class="ph ph-whatsapp-logo text-xl"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"><i class="ph ph-instagram-logo text-xl"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-12 reveal delay-200">
+                        <div>
+                            <p class="text-5xl font-light tracking-tight mb-2 flex items-center"><span class="counter" data-target="10">0</span><span class="text-brand-500 font-bold ml-1">+</span></p>
+                            <p class="text-sm text-gray-400 uppercase tracking-widest font-medium">Projects</p>
+                        </div>
+                        <div>
+                            <p class="text-5xl font-light tracking-tight mb-2 flex items-center"><span class="counter" data-target="100">0</span><span class="text-brand-500 font-bold ml-1">%</span></p>
+                            <p class="text-sm text-gray-400 uppercase tracking-widest font-medium">Founder Led</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Central Floating Card -->
+                <div class="w-full glass-light rounded-[2rem] p-8 md:p-12 text-gray-900 reveal delay-300 relative shadow-2xl overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-brand-100 rounded-full blur-3xl -mr-20 -mt-20 opacity-50"></div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 items-center relative z-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md">
+                                <div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center">
+                                    <i class="ph-fill ph-user text-2xl text-gray-600"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-lg">Harshdeep Singh</p>
+                                <p class="text-sm text-gray-500">Founder & Consultant</p>
+                            </div>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <h2 class="text-2xl md:text-3xl font-medium tracking-tight leading-tight mb-6 text-gray-800">
+                                We help real estate pros, clinics, and ambitious businesses elevate their digital value through custom websites, SEO, and strategic Google Profiles.
+                            </h2>
+                            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 text-white rounded-full font-medium hover:bg-brand-700 transition-colors">
+                                Book a Discovery Call <i class="ph ph-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upgraded Premium Trust Bar -->
+                <div class="mt-16 reveal delay-300 w-full max-w-5xl mx-auto">
+                    <div class="glass p-3 rounded-3xl lg:rounded-full border border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-2 shadow-2xl relative overflow-hidden">
+                        <!-- Subtle internal glow -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-brand-600/10 to-transparent opacity-50 pointer-events-none"></div>
+
+                        <!-- Item 1 -->
+                        <div class="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-2xl lg:rounded-full hover:bg-white/5 transition-colors group relative z-10">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-400 group-hover:scale-110 transition-transform shrink-0 shadow-sm">
+                                <i class="ph-light ph-device-mobile text-xl md:text-2xl"></i>
+                            </div>
+                            <p class="text-sm font-medium text-gray-200 leading-tight">Mobile-First <span class="block text-[11px] md:text-xs text-gray-400 mt-0.5 uppercase tracking-wider">Design</span></p>
+                        </div>
+
+                        <!-- Item 2 (Highlighted) -->
+                        <div class="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-2xl lg:rounded-full bg-brand-900/30 border border-brand-500/40 transition-colors group relative z-10 shadow-[inset_0_0_20px_rgba(37,99,235,0.15)]">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-500/20 border border-brand-500/50 flex items-center justify-center text-white shrink-0 relative">
+                                <div class="absolute -top-1 -right-1 w-2.5 h-2.5 md:w-3 md:h-3 bg-brand-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(96,165,250,0.8)]"></div>
+                                <i class="ph-light ph-rocket-launch text-xl md:text-2xl"></i>
+                            </div>
+                            <p class="text-sm font-bold text-white leading-tight">7-10 Day <span class="block text-[11px] md:text-xs text-brand-300 font-medium mt-0.5 uppercase tracking-wider">Fast Delivery</span></p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-2xl lg:rounded-full hover:bg-white/5 transition-colors group relative z-10">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-400 group-hover:scale-110 transition-transform shrink-0 shadow-sm">
+                                <i class="ph-light ph-magnifying-glass text-xl md:text-2xl"></i>
+                            </div>
+                            <p class="text-sm font-medium text-gray-200 leading-tight">SEO Ready <span class="block text-[11px] md:text-xs text-gray-400 mt-0.5 uppercase tracking-wider">Structure</span></p>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-2xl lg:rounded-full hover:bg-white/5 transition-colors group relative z-10">
+                            <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-400 group-hover:scale-110 transition-transform shrink-0 shadow-sm">
+                                <i class="ph-light ph-shield-check text-xl md:text-2xl"></i>
+                            </div>
+                            <p class="text-sm font-medium text-gray-200 leading-tight">SSL Secure <span class="block text-[11px] md:text-xs text-gray-400 mt-0.5 uppercase tracking-wider">Hosting</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Stats Counter Section (Authority Improvement) -->
+        <section class="py-12 bg-dark-bg border-y border-white/5 relative z-10 reveal">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/10">
+                <div class="px-4">
+                    <div class="text-4xl md:text-5xl font-black text-brand-400 mb-2 flex justify-center items-center">
+                        <span class="counter" data-target="50">0</span>+
+                    </div>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Websites Delivered</p>
+                </div>
+                <div class="px-4">
+                    <div class="text-4xl md:text-5xl font-black text-brand-400 mb-2 flex justify-center items-center">
+                        <span class="counter" data-target="7">0</span>-<span class="counter" data-target="10">0</span>
+                    </div>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Days Delivery</p>
+                </div>
+                <div class="px-4">
+                    <div class="text-4xl md:text-5xl font-black text-brand-400 mb-2 flex justify-center items-center">
+                        <span class="counter" data-target="3">0</span>x
+                    </div>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Avg. Lead Increase</p>
+                </div>
+                <div class="px-4">
+                    <div class="text-4xl md:text-5xl font-black text-brand-400 mb-2 flex justify-center items-center">
+                        <span class="counter" data-target="100">0</span>%
+                    </div>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Satisfaction</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrolling Marquee Transition -->
+        <section class="py-6 bg-brand-600 text-white border-y border-white/10 w-full relative overflow-hidden shadow-[0_0_40px_rgba(37,99,235,0.15)] z-20">
+            <div class="flex overflow-hidden whitespace-nowrap w-full">
+                <!-- Seamless continuous scrolling loop -->
+                <div class="flex items-center gap-8 animate-scroll cursor-default w-max">
+                    
+                    <!-- HALF 1: Original Set -->
+                    <div class="flex items-center gap-8 shrink-0">
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Let's Grow</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Get In Touch</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Digital Presence</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Generate Inquiries</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Build Trust</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    </div>
+                    <div class="flex items-center gap-8 shrink-0">
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Let's Grow</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Get In Touch</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Digital Presence</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Generate Inquiries</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Build Trust</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    </div>
+                    
+                    <!-- HALF 2: Exact Duplicate for Seamless Looping -->
+                    <div class="flex items-center gap-8 shrink-0">
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Let's Grow</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Get In Touch</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Digital Presence</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Generate Inquiries</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Build Trust</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    </div>
+                    <div class="flex items-center gap-8 shrink-0">
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Let's Grow</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Get In Touch</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Digital Presence</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Generate Inquiries</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                        <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Build Trust</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem & Solution Section -->
+        <section class="py-24 bg-dark-bg relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-900/10 rounded-full blur-[120px] -mr-40 -mt-40 pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="max-w-3xl mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+                        Your Website Should Be Your Best <span class="font-serif italic font-normal text-brand-400">Salesperson.</span>
+                    </h2>
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        Most business websites look outdated and act like digital brochures that no one reads. We build high-performance assets optimized to capture leads and drive real revenue.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- The Old Way -->
+                    <div class="glass rounded-3xl p-8 border border-white/10 relative overflow-hidden group reveal">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-red-500/50"></div>
+                        <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center mb-6">
+                            <i class="ph-fill ph-x-circle text-2xl text-red-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">The Old Way</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Paying for a slow, outdated website that doesn't rank on Google, has no clear call-to-actions, and lets potential clients slip over to your competitors.
+                        </p>
+                    </div>
+
+                    <!-- The JASUNN Way -->
+                    <div class="bg-dark-card rounded-3xl p-8 border border-brand-500/30 relative overflow-hidden group shadow-[0_0_30px_rgba(37,99,235,0.05)] reveal delay-100">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-brand-500"></div>
+                        <div class="w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center mb-6">
+                            <i class="ph-fill ph-rocket-launch text-2xl text-brand-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white">The JASUNN Way</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            A lightning-fast, conversion-optimized website integrated with WhatsApp and Google Business Profile, built specifically for lead generation to turn local traffic into warm inquiries.
+                        </p>
+                    </div>
+
+                    <!-- The Result -->
+                    <div class="glass rounded-3xl p-8 border border-white/10 relative overflow-hidden group reveal delay-200">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-green-500/50"></div>
+                        <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mb-6">
+                            <i class="ph-fill ph-check-circle text-2xl text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">The Result</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            Higher local rankings, instant trust with prospects, 24/7 lead generation, and absolute peace of mind with our ongoing technical care plans.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asymmetrical Editorial Services Section -->
+        <section id="services" class="pt-32 pb-0 bg-dark-bg relative border-t border-white/5">
+            <!-- Subtle background glow -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[600px] bg-brand-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 mb-16 reveal relative z-10">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+                    <div>
+                        <span class="text-brand-500 font-bold tracking-widest uppercase text-xs mb-4 block flex items-center gap-2"><i class="ph-fill ph-target"></i> Our Expertise</span>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-none">Digital <span class="font-serif italic font-normal text-brand-400">Dominance.</span></h2>
+                    </div>
+                    <p class="text-gray-400 max-w-sm md:text-right text-sm md:text-base leading-relaxed">Everything you need to capture leads, rank higher, and build absolute trust in your local market.</p>
+                </div>
+            </div>
+
+            <!-- Service Rows Container -->
+            <div class="w-full border-t border-white/10 reveal delay-100 relative z-10 flex flex-col">
+                
+                <!-- Service 01 -->
+                <div class="group border-b border-white/10 transition-colors duration-500 hover:bg-white/[0.02] relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    
+                    <div class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+                        
+                        <!-- Left: Massive Typography -->
+                        <div class="lg:col-span-5 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                                <span class="text-brand-500 font-mono text-sm tracking-widest block font-bold">01</span>
+                                <div class="h-[1px] w-12 bg-brand-500/50 hidden md:block"></div>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] font-bold tracking-tighter text-white transition-all duration-500">
+                                High-Converting<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600 group-hover:from-brand-400 group-hover:to-brand-200 transition-all duration-500">Web Design</span>
+                            </h3>
+                        </div>
+
+                        <!-- Right: Details & Chips -->
+                        <div class="lg:col-span-7 lg:pl-12 lg:border-l border-white/10 flex flex-col justify-center group-hover:border-white/20 transition-colors">
+                            <p class="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl font-light">
+                                Custom, mobile-first websites designed exclusively to capture leads and showcase your expertise or services.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-3 mb-8">
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-check-circle text-brand-500 text-lg"></i> Conversion-Optimized UX</span>
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-check-circle text-brand-500 text-lg"></i> Direct WhatsApp Integration</span>
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-check-circle text-brand-500 text-lg"></i> Lightning Fast Loading</span>
+                            </div>
+
+                            <a href="#contact" class="flex items-center gap-2 text-sm font-bold text-gray-500 group-hover:text-white transition-colors uppercase tracking-widest cursor-pointer w-max">
+                                Discuss Web Design <i class="ph-bold ph-arrow-right transform group-hover:translate-x-2 transition-transform text-brand-500"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 02 (Highlighted inherently) -->
+                <div class="group border-b border-white/10 transition-colors duration-500 hover:bg-white/[0.02] relative overflow-hidden bg-brand-900/[0.02]">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    
+                    <div class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+                        
+                        <div class="lg:col-span-5 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                                <span class="text-brand-500 font-mono text-sm tracking-widest block font-bold">02</span>
+                                <div class="h-[1px] w-12 bg-brand-500/50 hidden md:block"></div>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] font-bold tracking-tighter text-white transition-all duration-500">
+                                Google Business<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600 group-hover:from-brand-400 group-hover:to-brand-200 transition-all duration-500">Mastery</span>
+                            </h3>
+                        </div>
+
+                        <div class="lg:col-span-7 lg:pl-12 lg:border-l border-white/10 flex flex-col justify-center group-hover:border-white/20 transition-colors">
+                            <p class="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl font-light">
+                                Rank at the top of local search results when clients in your area search for your specific business solutions.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-3 mb-8">
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-check-circle text-brand-500 text-lg"></i> GBP Profile Optimization</span>
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-check-circle text-brand-500 text-lg"></i> Keyword & Service Setup</span>
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-check-circle text-brand-500 text-lg"></i> Review Generation Strategy</span>
+                            </div>
+
+                            <a href="#contact" class="flex items-center gap-2 text-sm font-bold text-gray-500 group-hover:text-white transition-colors uppercase tracking-widest cursor-pointer w-max">
+                                Boost Local SEO <i class="ph-bold ph-arrow-right transform group-hover:translate-x-2 transition-transform text-brand-500"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 03 -->
+                <div class="group border-b border-white/10 transition-colors duration-500 hover:bg-white/[0.02] relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-brand-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    
+                    <div class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+                        
+                        <div class="lg:col-span-5 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                                <span class="text-brand-500 font-mono text-sm tracking-widest block font-bold">03</span>
+                                <div class="h-[1px] w-12 bg-brand-500/50 hidden md:block"></div>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.1] font-bold tracking-tighter text-white transition-all duration-500">
+                                Ongoing Care<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-600 group-hover:from-brand-400 group-hover:to-brand-200 transition-all duration-500">& Support</span>
+                            </h3>
+                        </div>
+
+                        <div class="lg:col-span-7 lg:pl-12 lg:border-l border-white/10 flex flex-col justify-center group-hover:border-white/20 transition-colors">
+                            <p class="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl font-light">
+                                Never worry about your website breaking, getting hacked, or going out of date. We handle the tech; you handle the leads.
+                            </p>
+                            
+                            <div class="flex flex-wrap gap-3 mb-8">
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-shield-check text-brand-500 text-lg"></i> Monthly Security Backups</span>
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-shield-check text-brand-500 text-lg"></i> Unlimited Minor Updates</span>
+                                <span class="px-4 py-2 rounded-full border border-white/10 bg-black/50 backdrop-blur-md text-xs sm:text-sm font-medium text-gray-300 flex items-center gap-2 group-hover:border-brand-500/30 transition-colors"><i class="ph-fill ph-shield-check text-brand-500 text-lg"></i> Priority WhatsApp Support</span>
+                            </div>
+
+                            <a href="#pricing" class="flex items-center gap-2 text-sm font-bold text-gray-500 group-hover:text-white transition-colors uppercase tracking-widest cursor-pointer w-max">
+                                View Care Plans <i class="ph-bold ph-arrow-right transform group-hover:translate-x-2 transition-transform text-brand-500"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Portfolio & Case Studies (Replaces "Focused on Results") -->
+        <section id="work" class="py-24 bg-dark-bg border-t border-white/5 relative z-10">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 reveal gap-6">
+                    <div>
+                        <span class="text-brand-500 font-bold tracking-widest uppercase text-xs mb-4 block flex items-center gap-2"><i class="ph-fill ph-briefcase"></i> Featured Work</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Proven <span class="font-serif italic font-normal text-brand-400">Results.</span></h2>
+                        <p class="text-gray-400 max-w-xl">Explore our recent case studies and portfolio projects across diverse industries.</p>
+                    </div>
+                    <a href="#services" class="hidden md:flex items-center gap-2 text-sm text-gray-400 hover:text-white border border-white/20 rounded-full px-4 py-2 transition-colors">
+                        View Services <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+                    
+                    <!-- Portfolio Item 1: Ravi Dhayal (Large Feature) -->
+                    <a href="https://ravidhayal.com/" target="_blank" rel="noopener noreferrer" class="group cursor-pointer reveal block lg:col-span-3 h-full">
+                        <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-900 border border-white/10 mb-6 group-hover:border-brand-500/50 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_40px_rgba(37,99,235,0.15)]">
+                            <!-- Custom Abstract UI Graphic -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/40 to-black p-8 flex flex-col justify-end transition-transform duration-700 group-hover:scale-105">
+                                <div class="flex items-end gap-3 h-1/2 w-full max-w-sm mx-auto opacity-80">
+                                    <div class="w-1/5 bg-brand-600/30 rounded-t-sm h-[20%]"></div>
+                                    <div class="w-1/5 bg-brand-600/50 rounded-t-sm h-[40%]"></div>
+                                    <div class="w-1/5 bg-brand-600/70 rounded-t-sm h-[60%]"></div>
+                                    <div class="w-1/5 bg-brand-500/90 rounded-t-sm h-[80%] relative">
+                                        <div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap shadow-xl">Lead Gen</div>
+                                    </div>
+                                    <div class="w-1/5 bg-brand-400 rounded-t-sm h-[100%] shadow-[0_0_20px_rgba(96,165,250,0.5)]"></div>
+                                </div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-brand-600/80 backdrop-blur-md rounded-full flex items-center justify-center text-xs tracking-widest uppercase text-white font-bold border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 shadow-xl">
+                                    View Site
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-brand-400 transition-colors">Ravi Dhayal</h3>
+                                <i class="ph-bold ph-arrow-up-right text-brand-500 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 text-xl"></i>
+                            </div>
+                            <p class="text-brand-200 text-sm font-medium mb-3">Personal Brand / Business Coach</p>
+                            <div class="mt-2 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-brand-500/10 text-brand-400 text-xs font-bold border border-brand-500/20 w-max">
+                                <i class="ph-bold ph-trend-up"></i> 5× Increase in Qualified Leads
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Portfolio Item 2: BuildKart (Large Feature) -->
+                    <a href="https://jasunngrowthsolutions.github.io/BuildKart/" target="_blank" rel="noopener noreferrer" class="group cursor-pointer reveal delay-100 block lg:col-span-3 h-full">
+                        <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-900 border border-white/10 mb-6 group-hover:border-amber-500/50 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]">
+                            <!-- Custom Abstract UI Graphic -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-amber-900/30 to-black p-8 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
+                                <div class="w-full max-w-xs bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-2xl relative">
+                                     <div class="absolute -top-4 -right-4 bg-amber-500 text-black text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-amber-400 animate-pulse-slow">+800 Users</div>
+                                     <div class="flex items-center gap-4 mb-5 pb-5 border-b border-white/10">
+                                         <div class="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-500 text-xl"><i class="ph-fill ph-users"></i></div>
+                                         <div>
+                                             <div class="w-24 h-3 bg-white/20 rounded mb-2"></div>
+                                             <div class="w-16 h-2 bg-white/10 rounded"></div>
+                                         </div>
+                                     </div>
+                                     <div class="space-y-3">
+                                         <div class="w-full h-10 bg-white/5 rounded-lg flex items-center px-4"><div class="w-4 h-4 rounded-full bg-green-500/50 mr-3"></div><div class="w-1/2 h-2 bg-white/10 rounded"></div></div>
+                                         <div class="w-full h-10 bg-white/5 rounded-lg flex items-center px-4"><div class="w-4 h-4 rounded-full bg-green-500/50 mr-3"></div><div class="w-1/3 h-2 bg-white/10 rounded"></div></div>
+                                     </div>
+                                </div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-amber-600/80 backdrop-blur-md rounded-full flex items-center justify-center text-xs tracking-widest uppercase text-white font-bold border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 shadow-xl z-10">
+                                    View Site
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col h-full">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">BuildKart</h3>
+                                <i class="ph-bold ph-arrow-up-right text-amber-500 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 text-xl"></i>
+                            </div>
+                            <p class="text-amber-200/70 text-sm font-medium mb-3">Building Materials & Construction Supplies</p>
+                            <div class="mt-2 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold border border-amber-500/20 w-max">
+                                <i class="ph-bold ph-lightning"></i> 800+ Rate-List Joins in 2 Months
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Portfolio Item 3: Red Groom -->
+                    <a href="http://redgroom.com/" target="_blank" rel="noopener noreferrer" class="group cursor-pointer reveal block lg:col-span-2 h-full">
+                        <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-900 border border-white/10 mb-6 group-hover:border-red-500/50 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_rgba(239,68,68,0.1)]">
+                            <div class="absolute inset-0 bg-gradient-to-bl from-red-900/30 to-black p-8 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
+                                <div class="w-36 h-56 border-[4px] border-gray-800 rounded-3xl bg-zinc-950 p-3 relative shadow-2xl overflow-hidden">
+                                    <div class="w-12 h-3 bg-gray-800 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-lg"></div>
+                                    <div class="mt-5 w-full h-16 bg-red-600/20 rounded-xl mb-3 flex items-center justify-center text-red-500"><i class="ph-fill ph-car-profile text-3xl"></i></div>
+                                    <div class="w-3/4 h-2.5 bg-white/20 rounded mb-2"></div>
+                                    <div class="w-1/2 h-2 bg-white/10 rounded mb-5"></div>
+                                    <div class="w-full h-8 bg-red-600 rounded-lg flex items-center justify-center text-[9px] font-bold text-white tracking-wider">BOOK NOW</div>
+                                </div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-red-600/80 backdrop-blur-md rounded-full flex items-center justify-center text-xs tracking-widest uppercase text-white font-bold border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 z-10 shadow-xl">
+                                    Visit
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-red-400 transition-colors">Red Groom</h3>
+                                <i class="ph-bold ph-arrow-up-right text-red-500 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300"></i>
+                            </div>
+                            <p class="text-red-200/70 text-xs font-medium mb-3 uppercase tracking-wider">Travel & Car Rental</p>
+                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">Premium booking experience with a mobile-first design, trust-focused UI, and streamlined enquiry flow.</p>
+                        </div>
+                    </a>
+
+                    <!-- Portfolio Item 4: A.K. Shukla -->
+                    <a href="https://jasunngrowthsolutions.github.io/A.K.-Shukla./" target="_blank" rel="noopener noreferrer" class="group cursor-pointer reveal delay-100 block lg:col-span-2 h-full">
+                        <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-900 border border-white/10 mb-6 group-hover:border-slate-400/50 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_rgba(148,163,184,0.1)]">
+                            <div class="absolute inset-0 bg-gradient-to-b from-slate-800/40 to-black p-8 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
+                                <div class="flex flex-col items-center opacity-80">
+                                    <i class="ph-fill ph-scales text-6xl text-slate-300 mb-4 drop-shadow-[0_0_15px_rgba(203,213,225,0.3)]"></i>
+                                    <div class="w-32 h-1 bg-gradient-to-r from-transparent via-slate-400 to-transparent"></div>
+                                </div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-slate-600/80 backdrop-blur-md rounded-full flex items-center justify-center text-xs tracking-widest uppercase text-white font-bold border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 z-10 shadow-xl">
+                                    Visit
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-slate-300 transition-colors">A.K. Shukla</h3>
+                                <i class="ph-bold ph-arrow-up-right text-slate-400 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300"></i>
+                            </div>
+                            <p class="text-slate-300/70 text-xs font-medium mb-3 uppercase tracking-wider">Legal Services / Advocate</p>
+                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">Professional online presence with credibility-focused design, fully responsive layout, and improved presentation.</p>
+                        </div>
+                    </a>
+
+                    <!-- Portfolio Item 5: Zero Funded Hustle -->
+                    <a href="https://www.zerofundedhustle.com/" target="_blank" rel="noopener noreferrer" class="group cursor-pointer reveal delay-200 block lg:col-span-2 h-full">
+                        <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden bg-zinc-900 border border-white/10 mb-6 group-hover:border-emerald-500/50 transition-all duration-500 shadow-lg group-hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-emerald-900/30 to-black p-8 flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
+                                <div class="flex items-end gap-6 h-32 w-full max-w-[200px] justify-center opacity-90">
+                                    <!-- Candlestick 1 -->
+                                    <div class="relative w-4 flex flex-col items-center justify-end h-[60%]">
+                                        <div class="absolute w-[2px] h-full bg-red-500/50"></div>
+                                        <div class="w-full h-1/2 bg-red-500 z-10 rounded-sm"></div>
+                                    </div>
+                                    <!-- Candlestick 2 -->
+                                    <div class="relative w-4 flex flex-col items-center justify-center h-[80%]">
+                                        <div class="absolute w-[2px] h-full bg-emerald-500/50"></div>
+                                        <div class="w-full h-2/3 bg-emerald-500 z-10 rounded-sm"></div>
+                                    </div>
+                                    <!-- Candlestick 3 -->
+                                    <div class="relative w-4 flex flex-col items-center justify-start h-[100%]">
+                                        <div class="absolute w-[2px] h-full bg-emerald-400/50"></div>
+                                        <div class="w-full h-1/2 bg-emerald-400 z-10 rounded-sm shadow-[0_0_20px_rgba(52,211,153,0.5)]"></div>
+                                    </div>
+                                </div>
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-emerald-600/80 backdrop-blur-md rounded-full flex items-center justify-center text-xs tracking-widest uppercase text-white font-bold border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 z-10 shadow-xl">
+                                    Visit
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">Zero Funded Hustle</h3>
+                                <i class="ph-bold ph-arrow-up-right text-emerald-500 opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300"></i>
+                            </div>
+                            <p class="text-emerald-200/70 text-xs font-medium mb-3 uppercase tracking-wider">Trading Education & Community</p>
+                            <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">Premium learning platform featuring conversion-focused landing pages and strong brand positioning.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy / Quote Section with Interactive Marquee -->
+        <section class="py-24 bg-dark-card border-y border-white/5 relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6 text-center reveal">
+                <div class="w-20 h-20 mx-auto mb-8 rounded-full border border-white/10 flex items-center justify-center text-brand-500 text-4xl">
+                    "
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-tight mb-12">
+                    "We don't just sell websites. We help businesses build trust, improve visibility, and generate more inquiries through a strong online presence. It's a <span class="font-semibold text-brand-400">partnership</span> for growth."
+                </h2>
+                
+                <div class="flex items-center justify-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-gray-700 to-gray-900 border border-white/20 flex items-center justify-center">
+                        <i class="ph-fill ph-check-circle text-brand-400"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="font-semibold text-white">Harshdeep Singh</p>
+                        <p class="text-sm text-gray-500">Founder, JASUNN Growth Solutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Marquee replacing static icons -->
+            <div class="mt-20 pt-10 border-t border-white/5 overflow-hidden relative flex items-center h-16 w-full mask-image-gradient">
+                <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-dark-card to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-dark-card to-transparent z-10 pointer-events-none"></div>
+                
+                <div class="flex items-center gap-16 pr-16 animate-scroll text-gray-500 hover:text-gray-300 transition-colors">
+                    <!-- Tech & Trust Stack Set 1 -->
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-google-logo text-2xl"></i> Google Optimized</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-whatsapp-logo text-2xl"></i> WhatsApp Direct</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-lock-key text-2xl"></i> SSL Secure</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-lightning text-2xl"></i> Lightning Fast</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-chart-line-up text-2xl"></i> Analytics Ready</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-device-mobile text-2xl"></i> Mobile First</div>
+                    <!-- Duplicate Set 2 for Infinite Scroll -->
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-google-logo text-2xl"></i> Google Optimized</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-whatsapp-logo text-2xl"></i> WhatsApp Direct</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-lock-key text-2xl"></i> SSL Secure</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-lightning text-2xl"></i> Lightning Fast</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-chart-line-up text-2xl"></i> Analytics Ready</div>
+                    <div class="text-xl font-bold flex items-center gap-2 shrink-0"><i class="ph-fill ph-device-mobile text-2xl"></i> Mobile First</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-24 bg-dark-bg border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                        Don't Just Take Our <span class="font-serif italic font-normal text-brand-500">Word</span> For It.
+                    </h2>
+                    <p class="text-gray-400">See what ambitious founders and business owners are saying.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass rounded-3xl p-8 border border-white/10 flex flex-col justify-between reveal">
+                        <div>
+                            <div class="flex gap-1 mb-6">
+                                <i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed mb-8 text-sm md:text-base">
+                                "Honestly, they exceeded expectations. We had an old site that wasn't doing much. Harshdeep's team delivered a fast website and optimized our Google Business profile. We saw a 3x increase in WhatsApp inquiries within the first month alone."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-lg font-bold">R</div>
+                            <div>
+                                <p class="font-semibold text-white">Rajesh Sharma</p>
+                                <p class="text-xs text-brand-400">Healthcare Clinic Owner</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-3xl p-8 border border-white/10 flex flex-col justify-between reveal delay-100">
+                        <div>
+                            <div class="flex gap-1 mb-6">
+                                <i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed mb-8 text-sm md:text-base">
+                                "The transparency is what sold me. No hidden charges. They promised a premium site in 10 days, and hit the deadline perfectly. The new professional look helped me land 2 high-ticket consulting clients in my very first month post-launch."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-lg font-bold">A</div>
+                            <div>
+                                <p class="font-semibold text-white">Amit Desai</p>
+                                <p class="text-xs text-brand-400">B2B Consultant</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-3xl p-8 border border-white/10 flex flex-col justify-between reveal delay-200">
+                        <div>
+                            <div class="flex gap-1 mb-6">
+                                <i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i><i class="ph-fill ph-star text-brand-400"></i>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed mb-8 text-sm md:text-base">
+                                "My website now acts like my best 24/7 agent. The ongoing care plan is a relief—I'm not technical, so having them handle updates and security means I just focus on closing the property leads that come through WhatsApp."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-lg font-bold">P</div>
+                            <div>
+                                <p class="font-semibold text-white">Priya Patel</p>
+                                <p class="text-xs text-brand-400">Real Estate Broker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-24 bg-dark-card border-b border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">
+                        Why Ambitious Businesses Choose Us <span class="font-serif italic font-normal text-brand-400">Over Cheap Freelancers</span>
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass rounded-2xl p-6 border border-white/10 hover:border-brand-500/30 transition-colors reveal">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-6">
+                            <i class="ph-light ph-rocket text-2xl text-brand-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">7-10 Day Launch</h3>
+                        <p class="text-sm text-gray-400">Stop waiting months for a website. We execute fast without compromising on premium quality.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 border border-white/10 hover:border-brand-500/30 transition-colors reveal delay-100">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-6">
+                            <i class="ph-light ph-target text-2xl text-brand-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Conversion Focused</h3>
+                        <p class="text-sm text-gray-400">Built with one goal: turning your traffic into exclusive leads via WhatsApp and smart forms.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 border border-white/10 hover:border-brand-500/30 transition-colors reveal delay-200">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-6">
+                            <i class="ph-light ph-wallet text-2xl text-brand-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">No Hidden Costs</h3>
+                        <p class="text-sm text-gray-400">100% transparent pricing. You know exactly what you get and what you pay upfront.</p>
+                    </div>
+                    <div class="glass rounded-2xl p-6 border border-white/10 hover:border-brand-500/30 transition-colors reveal delay-300">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-6">
+                            <i class="ph-light ph-user-focus text-2xl text-brand-400"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">Founder-Led Support</h3>
+                        <p class="text-sm text-gray-400">You communicate directly with the founder. No getting passed off to junior account managers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-32 bg-dark-bg">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Transparent <span class="font-serif italic font-normal text-brand-500">Pricing</span></h2>
+                    <p class="text-xl text-white font-medium mb-4">Invest in an Asset, Not Just a Website.</p>
+                    <p class="text-gray-400">Flat fees. No hidden charges. Designed for maximum ROI.</p>
+                    
+                    <div class="flex flex-wrap justify-center gap-4 mt-8">
+                        <span class="text-xs border border-white/20 rounded-full px-4 py-2 bg-white/5">50% Advance, 50% on Launch</span>
+                        <span class="text-xs border border-white/20 rounded-full px-4 py-2 bg-white/5">Up to 2 Revision Rounds</span>
+                        <span class="text-xs border border-white/20 rounded-full px-4 py-2 bg-white/5">7-10 Business Days Delivery</span>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-6 lg:gap-8 items-start mb-24">
+                    <!-- Package 1: Launch -->
+                    <div class="glass rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-colors reveal delay-100 flex flex-col h-full">
+                        <p class="text-sm uppercase tracking-widest text-gray-400 font-semibold mb-2">Launch Pack</p>
+                        <div class="flex items-end gap-1 mb-4">
+                            <h3 class="text-4xl font-bold">₹12,999</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-8 pb-8 border-b border-white/10 min-h-[5rem]">Ideal for startups needing a fast, professional foundation.</p>
+                        
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Up to 5 Pages</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Mobile Responsive Design</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Contact Form Setup</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> WhatsApp Integration</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Basic SEO Setup</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Analytics & Console Setup</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> SSL Security Setup</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> 15 Days Support</li>
+                        </ul>
+                        <a href="#contact" class="block w-full py-3 px-6 rounded-full border border-white/20 text-center font-medium hover:bg-white hover:text-black transition-colors mt-auto">Explore Launch Pack</a>
+                    </div>
+
+                    <!-- Package 2: Growth -->
+                    <div class="bg-dark-card rounded-3xl p-8 border border-brand-500/50 shadow-[0_0_40px_rgba(37,99,235,0.15)] relative transform lg:-translate-y-4 reveal delay-200 flex flex-col h-full">
+                        <div class="absolute -top-4 right-8 bg-brand-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full shadow-lg">Most Popular Option</div>
+                        <p class="text-sm uppercase tracking-widest text-brand-400 font-semibold mb-2 flex items-center gap-2">Growth Pack <i class="ph-fill ph-star"></i></p>
+                        <div class="flex items-end gap-1 mb-4">
+                            <h3 class="text-4xl font-bold">₹18,999</h3>
+                        </div>
+                        <p class="text-sm text-gray-400 mb-8 pb-8 border-b border-white/10 min-h-[5rem]">A complete lead-generation machine built to outrank competitors.</p>
+                        <p class="text-xs font-semibold text-white mb-4">Everything in Launch, Plus:</p>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3 text-sm text-white"><i class="ph-fill ph-check-circle text-brand-400 text-lg mt-0.5"></i> Up to 10 Pages</li>
+                            <li class="flex items-start gap-3 text-sm text-white"><i class="ph-fill ph-check-circle text-brand-400 text-lg mt-0.5"></i> Premium Website Layout</li>
+                            <li class="flex items-start gap-3 text-sm text-white"><i class="ph-fill ph-check-circle text-brand-400 text-lg mt-0.5"></i> <strong>Google Business Optimization</strong></li>
+                            <li class="flex items-start gap-3 text-sm text-white"><i class="ph-fill ph-check-circle text-brand-400 text-lg mt-0.5"></i> Lead Capture Forms</li>
+                            <li class="flex items-start gap-3 text-sm text-white"><i class="ph-fill ph-check-circle text-brand-400 text-lg mt-0.5"></i> Speed Optimization</li>
+                            <li class="flex items-start gap-3 text-sm text-white"><i class="ph-fill ph-check-circle text-brand-400 text-lg mt-0.5"></i> Enhanced Site Structure</li>
+                            <li class="flex items-start gap-3 text-sm text-white"><i class="ph-fill ph-check-circle text-brand-400 text-lg mt-0.5"></i> 30 Days Support</li>
+                        </ul>
+                        <a href="#contact" class="block w-full py-3 px-6 rounded-full bg-brand-600 text-white text-center font-medium hover:bg-brand-500 transition-colors shadow-lg shadow-brand-500/25 mt-auto">Claim Growth Pack</a>
+                    </div>
+
+                    <!-- Package 3: Authority -->
+                    <div class="glass rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-colors reveal delay-300 flex flex-col h-full">
+                        <p class="text-sm uppercase tracking-widest text-gray-400 font-semibold mb-2">Authority Pack</p>
+                        <div class="flex items-end gap-1 mb-4">
+                            <h3 class="text-4xl font-bold">₹29,999</h3>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-8 pb-8 border-b border-white/10 min-h-[5rem]">The ultimate digital dominance setup for established agencies.</p>
+                        <p class="text-xs font-semibold text-gray-400 mb-4">Everything in Growth, Plus:</p>
+                        <ul class="space-y-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Up to 15 Pages</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Custom Website Design</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Dedicated Landing Page</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Advanced Lead Forms</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Service/Property Showcase</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> Priority Support</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-brand-500 text-lg mt-0.5"></i> 60 Days Support</li>
+                        </ul>
+                        <a href="#contact" class="block w-full py-3 px-6 rounded-full border border-white/20 text-center font-medium hover:bg-white hover:text-black transition-colors mt-auto">Secure Authority Pack</a>
+                    </div>
+                </div>
+
+                <!-- Care Plans -->
+                <div class="pt-16 border-t border-white/10 reveal">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold tracking-tight mb-3">Never Worry About Your Website Again</h3>
+                        <p class="text-gray-400 max-w-2xl mx-auto">Post-launch technical care plans to keep your asset secure and up to date. (Billed monthly)</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                        <div class="glass rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-colors">
+                            <h4 class="text-lg font-bold text-white mb-1">Website Care Plan</h4>
+                            <p class="text-2xl font-bold text-brand-400 mb-6">₹1,499<span class="text-sm font-normal text-gray-500">/mo</span></p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-500 mt-1"></i> Website Backups</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-500 mt-1"></i> Security Monitoring</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-500 mt-1"></i> Minor Content Updates</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-500 mt-1"></i> Technical Support</li>
+                            </ul>
+                        </div>
+                        <div class="glass rounded-2xl p-6 border border-brand-500/50 bg-white/[0.02] relative">
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-[10px] font-bold uppercase tracking-widest py-1 px-3 rounded-full">Recommended</div>
+                            <h4 class="text-lg font-bold text-white mb-1">Growth Care Plan</h4>
+                            <p class="text-2xl font-bold text-brand-400 mb-6">₹2,999<span class="text-sm font-normal text-gray-500">/mo</span></p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2 text-sm text-white font-medium"><i class="ph-bold ph-check text-brand-400 mt-1"></i> All Website Care Features</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-400 mt-1"></i> Priority Support</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-400 mt-1"></i> Additional Content Updates</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-400 mt-1"></i> Performance Review</li>
+                            </ul>
+                        </div>
+                        <div class="glass rounded-2xl p-6 border border-white/10 hover:border-white/20 transition-colors">
+                            <h4 class="text-lg font-bold text-white mb-1">Premium Care Plan</h4>
+                            <p class="text-2xl font-bold text-brand-400 mb-6">₹4,999<span class="text-sm font-normal text-gray-500">/mo</span></p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2 text-sm text-white font-medium"><i class="ph-bold ph-check text-brand-500 mt-1"></i> All Growth Care Features</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-500 mt-1"></i> Frequent Content Updates</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-500 mt-1"></i> Landing Page Updates</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-500 mt-1"></i> Faster Turnaround Time</li>
+                                <li class="flex items-start gap-2 text-sm text-gray-300"><i class="ph-bold ph-check text-brand-500 mt-1"></i> Priority Handling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-6 text-sm text-gray-400 reveal">
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-lock-key text-xl text-gray-500"></i> Secure Payments via Razorpay/UPI</div>
+                    <div class="hidden md:block w-1 h-1 bg-gray-600 rounded-full"></div>
+                    <div class="flex items-center gap-2"><i class="ph-fill ph-seal-check text-xl text-gray-500"></i> 100% Satisfaction Guarantee</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pre-FAQ Lead Magnet Banner -->
+        <section class="py-12 bg-dark-bg reveal">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="glass-light bg-brand-600 rounded-3xl p-8 md:p-12 shadow-[0_0_40px_rgba(37,99,235,0.2)] relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="absolute -right-10 -top-10 opacity-10 pointer-events-none">
+                        <i class="ph-fill ph-file-text text-[200px] text-white"></i>
+                    </div>
+                    <div class="z-10 text-center md:text-left text-white max-w-xl">
+                        <span class="font-bold uppercase text-xs tracking-widest mb-2 block text-brand-100">Free Bonus</span>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-3">Download Our 15-Point GBP SEO Checklist</h2>
+                        <p class="text-brand-50 text-sm font-medium">Not ready to build a site yet? Grab our free checklist to see exactly why your competitors are outranking you on Google Maps right now.</p>
+                    </div>
+                    <div class="z-10 w-full md:w-auto shrink-0">
+                        <a href="https://wa.me/918738873878?text=Hi%20Harshdeep,%20I%20would%20like%20the%20Free%2015-Point%20GBP%20Checklist!" target="_blank" rel="noopener noreferrer" class="block w-full bg-dark-bg text-white px-8 py-4 rounded-full font-bold hover:bg-black transition-colors text-center shadow-lg border border-white/10">
+                            Get Free Checklist <i class="ph-bold ph-download-simple inline-block ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section class="py-24 bg-dark-bg border-t border-white/5">
+            <div class="max-w-3xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center mb-16 reveal">Ask Us <span class="font-serif italic font-normal text-brand-500">Anything</span></h2>
+
+                <div class="space-y-4 reveal delay-100">
+                    <div class="accordion-item glass rounded-2xl border border-white/10 overflow-hidden">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                            <span class="font-medium text-white">Why do I need a custom website instead of a free builder?</span>
+                            <i class="ph ph-plus text-xl text-gray-400 accordion-icon transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 bg-transparent">
+                            <p class="pb-6 text-gray-400 text-sm leading-relaxed">
+                                Free builders often look generic, lack proper SEO foundations, and run slowly on mobile devices. A custom-built site establishes credibility, is optimized specifically for your business goals, and ensures you actually own your digital asset without restrictive platform lock-ins.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item glass rounded-2xl border border-white/10 overflow-hidden active">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none bg-brand-600/20 hover:bg-brand-600/30 transition-colors">
+                            <span class="font-medium text-white">How fast is your delivery timeline?</span>
+                            <i class="ph ph-plus text-xl text-brand-400 accordion-icon transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 bg-transparent" style="max-height: 200px;">
+                            <p class="pb-6 text-brand-100 text-sm leading-relaxed">
+                                Our standard development timeline is 7-10 business days. This timeline begins once we have received all necessary requirements, content, images, and brand assets from you during the onboarding phase. We prioritize founder-led execution to ensure quality and speed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item glass rounded-2xl border border-white/10 overflow-hidden">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                            <span class="font-medium text-white">What is included in the Google Business Profile setup?</span>
+                            <i class="ph ph-plus text-xl text-gray-400 accordion-icon transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 bg-transparent">
+                            <p class="pb-6 text-gray-400 text-sm leading-relaxed">
+                                We handle full profile setup, guide you through verification, optimize your business description, list your services/products, optimize images for local search, and configure settings to maximize your visibility in local Google Maps searches.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item glass rounded-2xl border border-white/10 overflow-hidden">
+                        <button class="w-full px-6 py-5 flex justify-between items-center text-left focus:outline-none bg-white/[0.02] hover:bg-white/[0.04] transition-colors">
+                            <span class="font-medium text-white">Do you provide ongoing support after launch?</span>
+                            <i class="ph ph-plus text-xl text-gray-400 accordion-icon transition-transform duration-300"></i>
+                        </button>
+                        <div class="accordion-content px-6 bg-transparent">
+                            <p class="pb-6 text-gray-400 text-sm leading-relaxed">
+                                Yes. Every package includes an initial post-launch support period (15 to 60 days). After that, we offer transparent Website Care Plans starting at ₹1,499/month that cover technical support, minor updates, security monitoring, and backups.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12 reveal delay-200">
+                    <a href="#contact" class="text-sm text-gray-400 hover:text-white border-b border-gray-600 hover:border-white transition-colors pb-1">Still have questions? Let's talk.</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process -->
+        <section class="py-24 bg-dark-bg border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex justify-between items-end mb-16 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Our <span class="font-serif italic font-normal text-brand-500">Process</span></h2>
+                    <span class="text-sm text-gray-500 border border-white/20 rounded-full px-4 py-1">How we work</span>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="group reveal">
+                        <p class="text-xs text-brand-500 font-semibold mb-3 tracking-widest uppercase">Phase 1</p>
+                        <h3 class="text-xl font-bold mb-4">Planning & Strategy</h3>
+                        <div class="aspect-video bg-zinc-900 rounded-2xl border border-white/10 mb-6 relative overflow-hidden group-hover:border-brand-500/30 transition-colors">
+                            <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-black to-zinc-900">
+                                <i class="ph-light ph-strategy text-5xl text-gray-600 group-hover:text-brand-400 transition-colors duration-500"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400">Deep dive into requirements, content collection, and structuring the website architecture for maximum conversion.</p>
+                    </div>
+
+                    <div class="group reveal delay-100">
+                        <p class="text-xs text-brand-500 font-semibold mb-3 tracking-widest uppercase">Phase 2</p>
+                        <h3 class="text-xl font-bold mb-4">Design & Development</h3>
+                        <div class="aspect-video bg-zinc-900 rounded-2xl border border-white/10 mb-6 relative overflow-hidden group-hover:border-brand-500/30 transition-colors">
+                            <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-black to-zinc-900">
+                                <i class="ph-light ph-code text-5xl text-gray-600 group-hover:text-brand-400 transition-colors duration-500"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400">Crafting mobile-optimized layouts, integrating necessary tools (WhatsApp, Forms), and implementing basic SEO.</p>
+                    </div>
+
+                    <div class="group reveal delay-200">
+                        <p class="text-xs text-brand-500 font-semibold mb-3 tracking-widest uppercase">Phase 3 & 4</p>
+                        <h3 class="text-xl font-bold mb-4">Testing & Launch</h3>
+                        <div class="aspect-video bg-zinc-900 rounded-2xl border border-white/10 mb-6 relative overflow-hidden group-hover:border-brand-500/30 transition-colors">
+                            <div class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-black to-zinc-900">
+                                <i class="ph-light ph-rocket-launch text-5xl text-gray-600 group-hover:text-brand-400 transition-colors duration-500"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400">Rigorous quality and speed testing followed by a seamless launch and handover with ongoing support options.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet The Team Section -->
+        <section class="py-24 bg-dark-card border-t border-white/5 relative overflow-hidden">
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-900/20 rounded-full blur-[120px] -ml-40 -mb-40 pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                    <div class="lg:col-span-7 glass rounded-3xl p-8 md:p-12 border border-white/10 reveal flex flex-col justify-center">
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+                            Hi, I'm <span class="text-brand-400">Harshdeep Singh.</span>
+                        </h2>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest font-semibold mb-8">Founder & Lead Developer</p>
+                        <div class="space-y-6 text-gray-300 text-sm md:text-base leading-relaxed">
+                            <p>I know exactly how frustrating it is to lose high-ticket clients because your business looks smaller or less professional than it actually is online.</p>
+                            <p>I started JASUNN Growth Solutions to fix that for consultants, local services, and SMBs across all industries. I handle the technical architecture to ensure your digital asset is engineered to rank locally, build immediate trust, and force your calendar to fill up with qualified leads.</p>
+                            <p class="font-semibold text-white pt-4 border-t border-white/10">When you work with us, your growth becomes our personal priority.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+                        <div class="glass rounded-3xl p-6 border border-white/10 flex items-start gap-5 reveal delay-100">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border-2 border-white/10 flex-shrink-0 flex items-center justify-center">
+                                 <i class="ph-fill ph-user text-2xl text-gray-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Mohammed Sahil</h3>
+                                <p class="text-xs text-brand-400 mb-3 uppercase tracking-wider font-semibold">Growth Partner</p>
+                                <p class="text-sm text-gray-400 leading-relaxed">Sahil leads client acquisition and strategy. From your first call to optimizing growth channels, he positions your business for revenue.</p>
+                            </div>
+                        </div>
+                        <div class="glass rounded-3xl p-6 border border-white/10 flex items-start gap-5 reveal delay-200">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border-2 border-white/10 flex-shrink-0 flex items-center justify-center">
+                                 <i class="ph-fill ph-user text-2xl text-gray-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Preet Kaur</h3>
+                                <p class="text-xs text-brand-400 mb-3 uppercase tracking-wider font-semibold">Client Success Partner</p>
+                                <p class="text-sm text-gray-400 leading-relaxed">Preet manages seamless project execution and client communication, ensuring every detail is delivered perfectly and on time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scrolling Marquee CTA -->
+    <section class="py-6 bg-brand-600 text-white border-y border-white/10 w-full relative overflow-hidden shadow-[0_0_40px_rgba(37,99,235,0.15)] z-20">
+        <div class="flex overflow-hidden whitespace-nowrap w-full">
+            <div class="flex items-center gap-8 animate-scroll cursor-default w-max">
+                
+                <!-- HALF 1 -->
+                <div class="flex items-center gap-8 shrink-0">
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Let's Grow</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Get In Touch</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Digital Presence</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Generate Inquiries</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Build Trust</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                </div>
+                <div class="flex items-center gap-8 shrink-0">
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Let's Grow</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Get In Touch</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Digital Presence</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Generate Inquiries</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Build Trust</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                </div>
+                
+                <!-- HALF 2 -->
+                <div class="flex items-center gap-8 shrink-0">
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Let's Grow</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Get In Touch</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Digital Presence</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Generate Inquiries</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Build Trust</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                </div>
+                <div class="flex items-center gap-8 shrink-0">
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Let's Grow</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Get In Touch</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Digital Presence</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Generate Inquiries</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                    <span class="text-3xl md:text-5xl font-bold uppercase tracking-tighter">Build Trust</span> <span class="text-xl opacity-50 text-brand-200">•</span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-[#020202] pt-24 pb-10 border-t border-white/10 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 mb-20">
+                
+                <div class="md:col-span-5 pr-0 md:pr-12">
+                    <h3 class="text-2xl font-bold mb-6">Ready to grow your digital footprint?</h3>
+                    <p class="text-gray-400 text-sm mb-8 max-w-sm">
+                        Get in touch for a free consultation. We'll analyze your current presence and suggest practical, transparent solutions to build trust and generate inquiries.
+                    </p>
+                    
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="flex flex-col gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" id="name" name="name" placeholder="Full Name*" required class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                            <input type="email" id="email" name="email" placeholder="Email Address*" required class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="tel" id="phone" name="phone" placeholder="WhatsApp Number*" required class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                            <input type="text" id="business" name="business" placeholder="Business/Agency Name" class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                        </div>
+                        <input type="text" id="goal" name="goal" placeholder="What's your main goal?*" required class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                        
+                        <button type="submit" id="submit-btn" class="bg-brand-600 hover:bg-brand-500 text-white rounded-full px-8 py-3 text-sm font-medium transition-colors w-full sm:w-auto self-start mt-2 flex items-center justify-center gap-2">
+                            Contact Us
+                        </button>
+
+                        <div id="form-success" class="hidden bg-green-500/20 text-green-400 border border-green-500/30 p-3 rounded-xl text-xs font-medium mt-2">
+                            Success! We've received your request. We'll be in touch shortly.
+                        </div>
+                        <div id="form-error" class="hidden bg-red-500/20 text-red-400 border border-red-500/30 p-3 rounded-xl text-xs font-medium mt-2">
+                            Oops! Something went wrong. Please click the WhatsApp button instead.
+                        </div>
+                    </form>
+                    <p class="text-xs text-gray-600 mt-4">We respect your privacy. No spam.</p>
+                </div>
+
+                <div class="md:col-span-2"></div> <!-- Spacer -->
+
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-semibold mb-6">Services</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#services" class="text-sm text-gray-400 hover:text-white transition-colors">Website Development</a></li>
+                        <li><a href="#services" class="text-sm text-gray-400 hover:text-white transition-colors">Google Profile Setup</a></li>
+                        <li><a href="#pricing" class="text-sm text-gray-400 hover:text-white transition-colors">Website Care Plans</a></li>
+                        <li><a href="#work" class="text-sm text-gray-400 hover:text-white transition-colors">SEO Optimization</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-semibold mb-6">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">About JASUNN Growth Solutions</a></li>
+                        <li><a href="#work" class="text-sm text-gray-400 hover:text-white transition-colors">Our Work</a></li>
+                        <li><a href="#pricing" class="text-sm text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li class="flex items-center gap-2 mt-6">
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i class="ph-fill ph-instagram-logo"></i></a>
+                            <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i class="ph-fill ph-linkedin-logo"></i></a>
+                            <a href="https://wa.me/918738873878" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2 text-xl font-bold text-white">
+                     <i class="ph-fill ph-trend-up text-brand-600"></i> JASUNN Growth Solutions
+                </div>
+                <div class="text-xs text-gray-500 text-center">
+                    <p>&copy; 2026 JASUNN Growth Solutions. All rights reserved.</p>
+                    <p class="mt-1">GSTIN: 06NOPPS8410N1ZV</p>
+                </div>
+                <div class="flex gap-6 text-xs text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-dark-bg/80', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'shadow-sm');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-3');
+                } else {
+                    navbar.classList.remove('bg-dark-bg/80', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'shadow-sm');
+                    navbar.classList.remove('py-3');
+                    navbar.classList.add('py-4');
+                }
+            });
+
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                    mobileBtn.innerHTML = '<i class="ph ph-list text-2xl"></i>';
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                    mobileBtn.innerHTML = '<i class="ph ph-x text-2xl"></i>';
+                }
+            }
+
+            mobileBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // Scroll Reveal Animation using Intersection Observer
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealOnScroll.observe(el);
+            });
+
+            // Stats Counter Animation
+            const counters = document.querySelectorAll('.counter');
+            const counterObserverOptions = { threshold: 0.5 };
+            
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const targetVal = +target.getAttribute('data-target');
+                        const speed = 100;
+                        
+                        const updateCount = () => {
+                            const current = +target.innerText;
+                            const increment = targetVal / speed;
+                            if (current < targetVal) {
+                                target.innerText = Math.ceil(current + increment);
+                                setTimeout(updateCount, 20);
+                            } else {
+                                target.innerText = targetVal;
+                            }
+                        };
+                        updateCount();
+                        observer.unobserve(target);
+                    }
+                });
+            }, counterObserverOptions);
+            counters.forEach(counter => counterObserver.observe(counter));
+
+            // FAQ Accordion Logic
+            const accordionItems = document.querySelectorAll('.accordion-item');
+
+            accordionItems.forEach(item => {
+                const button = item.querySelector('button');
+                const content = item.querySelector('.accordion-content');
+                
+                if(item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+
+                button.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                            const otherBtn = otherItem.querySelector('button');
+                            otherBtn.classList.remove('bg-brand-600/20');
+                            otherBtn.classList.add('bg-white/[0.02]');
+                            otherItem.querySelector('.accordion-icon').classList.replace('text-brand-400', 'text-gray-400');
+                        }
+                    });
+
+                    if (isActive) {
+                        item.classList.remove('active');
+                        content.style.maxHeight = null;
+                        button.classList.remove('bg-brand-600/20');
+                        button.classList.add('bg-white/[0.02]');
+                        item.querySelector('.accordion-icon').classList.replace('text-brand-400', 'text-gray-400');
+                    } else {
+                        item.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        button.classList.remove('bg-white/[0.02]');
+                        button.classList.add('bg-brand-600/20');
+                        item.querySelector('.accordion-icon').classList.replace('text-gray-400', 'text-brand-400');
+                    }
+                });
+            });
+
+            // Functional Contact Form Mock Logic
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMsg = document.getElementById('form-success');
+            const errorMsg = document.getElementById('form-error');
+
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="ph ph-spinner-gap animate-spin"></i> Sending...';
+                    
+                    successMsg.classList.add('hidden');
+                    errorMsg.classList.add('hidden');
+
+                    // Simulate API Call / Validation
+                    setTimeout(() => {
+                        successMsg.classList.remove('hidden');
+                        form.reset();
+                        
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                    }, 1500);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
