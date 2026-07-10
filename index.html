@@ -1543,11 +1543,12 @@
                 });
             });
 
-            // Functional Contact Form Mock Logic
+            // Functional Contact Form Logic integrating Google Apps Script
             const form = document.getElementById('contact-form');
             const submitBtn = document.getElementById('submit-btn');
             const successMsg = document.getElementById('form-success');
             const errorMsg = document.getElementById('form-error');
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyuJdaN18YUjbcD0kKj9SEoY8o0rjiMA0_qB5cVXp-VEKHtTm4v5zAB5Zy7vea6taKq/exec';
 
             if (form) {
                 form.addEventListener('submit', (e) => {
@@ -1560,14 +1561,36 @@
                     successMsg.classList.add('hidden');
                     errorMsg.classList.add('hidden');
 
-                    // Simulate API Call / Validation
-                    setTimeout(() => {
+                    // Extract values using existing HTML IDs and map to expected payload structure
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        whatsapp: document.getElementById('phone').value,
+                        business: document.getElementById('business').value,
+                        goal: document.getElementById('goal').value
+                    };
+
+                    // Asynchronous submission using fetch
+                    fetch(scriptURL, {
+                        method: "POST",
+                        body: JSON.stringify(formData)
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        // Display the professional success message UI
                         successMsg.classList.remove('hidden');
-                        form.reset();
-                        
+                        form.reset(); // Clear the form only on success
+                    })
+                    .catch(err => {
+                        console.error('Form submission error:', err);
+                        // Display the user-friendly error message UI
+                        errorMsg.classList.remove('hidden');
+                    })
+                    .finally(() => {
+                        // Re-enable the button once request completes (whether success or fail)
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = originalText;
-                    }, 1500);
+                    });
                 });
             }
         });
