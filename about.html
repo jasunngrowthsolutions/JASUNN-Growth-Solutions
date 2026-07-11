@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZSS99Y1QH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DZSS99Y1QH');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | JASUNN Growth Solutions</title>
+    
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], },
+                    colors: {
+                        brand: { 50: '#eff6ff', 100: '#dbeafe', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 900: '#1e3a8a', 950: '#0b1120', },
+                        dark: { bg: '#050505', card: '#111111', border: '#222222' }
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(5, 5, 5, 1) 60%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 5px; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold tracking-tight text-white flex items-center gap-2 z-50">
+                JASUNN<span class="font-light opacity-60"> Growth Solutions</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 bg-white/5 backdrop-blur-md px-8 py-3 rounded-full border border-white/10">
+                <a href="about.html" class="text-sm text-brand-400 font-medium transition-colors">About</a>
+                <a href="index.html#services" class="text-sm text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="text-sm text-gray-300 hover:text-white transition-colors">Portfolio</a>
+                <a href="index.html#pricing" class="text-sm text-gray-300 hover:text-white transition-colors">Pricing</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="contact.html" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-brand-600 rounded-full hover:bg-brand-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]">Start Project</a>
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 z-50"><i class="ph ph-list text-2xl"></i></button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dark-bg/95 backdrop-blur-xl flex-col items-center justify-center gap-8 hidden z-40">
+        <a href="about.html" class="mobile-link text-2xl font-medium text-brand-400">About Us</a>
+        <a href="index.html#services" class="mobile-link text-2xl font-medium text-white">View Services</a>
+        <a href="portfolio.html" class="mobile-link text-2xl font-medium text-white">Our Portfolio</a>
+        <a href="index.html#pricing" class="mobile-link text-2xl font-medium text-white">View Pricing</a>
+        <a href="contact.html" class="mobile-link px-8 py-3 mt-4 text-lg font-medium text-white bg-brand-600 rounded-full">Start Your Project</a>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <header class="relative pt-40 pb-20 lg:pt-48 lg:pb-32 bg-hero-glow">
+            <div class="max-w-7xl mx-auto px-6 relative z-10 text-center reveal">
+                <p class="text-sm uppercase tracking-widest text-brand-400 font-bold mb-4">About JASUNN</p>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
+                    Who We <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-white font-serif italic font-normal">Are.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    We are a premium web development and digital growth agency building high-performance assets for ambitious businesses, consultants, and local agencies.
+                </p>
+            </div>
+        </header>
+
+        <!-- Mission & Values -->
+        <section class="py-24 bg-dark-bg border-y border-white/5 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass rounded-3xl p-8 border border-white/10 reveal">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center mb-6"><i class="ph-fill ph-target text-2xl text-brand-400"></i></div>
+                        <p class="text-xl font-bold mb-3 text-white">Our Mission</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">To transform generic business websites into powerful lead-generation machines that capture local market share and build immediate trust.</p>
+                    </div>
+                    <div class="bg-dark-card rounded-3xl p-8 border border-brand-500/30 reveal delay-100 shadow-[0_0_30px_rgba(37,99,235,0.05)]">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center mb-6"><i class="ph-fill ph-handshake text-2xl text-brand-400"></i></div>
+                        <p class="text-xl font-bold mb-3 text-white">Our Approach</p>
+                        <p class="text-sm text-gray-300 leading-relaxed">We don't do cheap templates or endless monthly retainers. We deliver premium, mobile-first assets with transparent flat-fee pricing and fast 7-10 day execution.</p>
+                    </div>
+                    <div class="glass rounded-3xl p-8 border border-white/10 reveal delay-200">
+                        <div class="w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center mb-6"><i class="ph-fill ph-chart-line-up text-2xl text-brand-400"></i></div>
+                        <p class="text-xl font-bold mb-3 text-white">Who We Help</p>
+                        <p class="text-sm text-gray-400 leading-relaxed">We partner with real estate professionals, healthcare clinics, business consultants, and local service businesses ready to scale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet The Team Section -->
+        <section class="py-24 bg-dark-card border-b border-white/5 relative overflow-hidden">
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-900/20 rounded-full blur-[120px] -ml-40 -mb-40 pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">The <span class="font-serif italic font-normal text-brand-500">Team</span></h2>
+                </div>
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                    <div class="lg:col-span-7 glass rounded-3xl p-8 md:p-12 border border-white/10 reveal flex flex-col justify-center">
+                        <div class="flex items-center gap-6 mb-6">
+                            <div class="w-20 h-20 rounded-full border-2 border-white/10 overflow-hidden bg-gray-200 shrink-0">
+                                <img src="harshdeep.jpg" alt="Harshdeep Singh" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h2 class="text-2xl md:text-3xl font-bold text-brand-400">Harshdeep Singh</h2>
+                                <p class="text-sm text-gray-500 uppercase tracking-widest font-semibold mt-1">Founder & Lead Developer</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed">
+                            <p>I know exactly how frustrating it is to lose high-ticket clients because your business looks smaller or less professional than it actually is online.</p>
+                            <p>I started JASUNN Growth Solutions to fix that. I handle the technical architecture to ensure your digital asset is engineered to rank locally, build immediate trust, and force your calendar to fill up with qualified leads.</p>
+                            <p class="font-semibold text-white pt-4 border-t border-white/10">When you work with us, your growth becomes our personal priority.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-6">
+                        <div class="glass rounded-3xl p-6 border border-white/10 flex items-start gap-5 reveal delay-100">
+                            <div class="w-16 h-16 rounded-full border-2 border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden bg-gray-200">
+                                 <img src="sahil.jpg" alt="Mohammed Sahil" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-lg">Mohammed Sahil</p>
+                                <p class="text-xs text-brand-400 mb-3 uppercase tracking-wider font-semibold">Growth Partner</p>
+                                <p class="text-sm text-gray-400 leading-relaxed">Sahil leads client acquisition and strategy. From your first call to optimizing channels, he positions your business for revenue.</p>
+                            </div>
+                        </div>
+                        <div class="glass rounded-3xl p-6 border border-white/10 flex items-start gap-5 reveal delay-200">
+                            <div class="w-16 h-16 rounded-full border-2 border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden bg-gray-200">
+                                 <img src="preet.jpg" alt="Preet Kaur" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <p class="font-bold text-white text-lg">Preet Kaur</p>
+                                <p class="text-xs text-brand-400 mb-3 uppercase tracking-wider font-semibold">Client Success Partner</p>
+                                <p class="text-sm text-gray-400 leading-relaxed">Preet manages seamless project execution and client communication, ensuring every detail is delivered perfectly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 bg-dark-bg reveal">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to work with us?</h2>
+                <p class="text-gray-400 mb-8">We're always looking to partner with ambitious businesses ready to take their digital presence to the next level.</p>
+                <a href="contact.html" class="inline-block bg-brand-600 hover:bg-brand-500 text-white rounded-full px-8 py-4 font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]">Get in Touch <i class="ph-bold ph-arrow-right ml-2"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#020202] pt-24 pb-10 border-t border-white/10 relative overflow-hidden">
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-900/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 mb-20">
+                <div class="md:col-span-5 pr-0 md:pr-12">
+                    <h3 class="text-2xl font-bold mb-6">Ready to grow your digital footprint?</h3>
+                    <p class="text-gray-400 text-sm mb-8 max-w-sm">Get in touch for a free consultation. We'll analyze your current presence and suggest practical solutions.</p>
+                    <form id="contact-form" class="flex flex-col gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" id="name" name="name" placeholder="Full Name*" required class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 w-full">
+                            <input type="email" id="email" name="email" placeholder="Email Address*" required class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 w-full">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="tel" id="phone" name="phone" placeholder="WhatsApp Number*" required class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 w-full">
+                            <input type="text" id="business" name="business" placeholder="Business Name" class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 w-full">
+                        </div>
+                        <input type="text" id="goal" name="goal" placeholder="What's your main goal?*" required class="bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm text-white focus:outline-none focus:border-brand-500 w-full">
+                        <button type="submit" id="submit-btn" class="bg-brand-600 hover:bg-brand-500 text-white rounded-full px-8 py-3 text-sm font-medium w-full sm:w-auto self-start mt-2 flex items-center justify-center gap-2">Contact Us</button>
+                        <div id="form-success" class="hidden bg-green-500/20 text-green-400 border border-green-500/30 p-3 rounded-xl text-xs mt-2">Success! We'll be in touch shortly.</div>
+                        <div id="form-error" class="hidden bg-red-500/20 text-red-400 border border-red-500/30 p-3 rounded-xl text-xs mt-2">Oops! Please try again.</div>
+                    </form>
+                </div>
+                <div class="md:col-span-2"></div>
+                <div class="md:col-span-2">
+                    <p class="text-white font-semibold mb-6">Services</p>
+                    <ul class="space-y-4">
+                        <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Web Design Services</a></li>
+                        <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Google Profile SEO</a></li>
+                        <li><a href="index.html#pricing" class="text-sm text-gray-400 hover:text-white transition-colors">Care Plans & Support</a></li>
+                        <li><a href="portfolio.html" class="text-sm text-gray-400 hover:text-white transition-colors">Portfolio & Work</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3">
+                    <p class="text-white font-semibold mb-6">Company</p>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">About JASUNN</a></li>
+                        <li><a href="portfolio.html" class="text-sm text-gray-400 hover:text-white transition-colors">Client Case Studies</a></li>
+                        <li><a href="index.html#pricing" class="text-sm text-gray-400 hover:text-white transition-colors">Service Pricing</a></li>
+                        <li><a href="contact.html" class="text-sm text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                        <li class="flex items-center gap-2 mt-6">
+                            <a href="https://www.instagram.com/jasunngrowthsolutions" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10"><i class="ph-fill ph-instagram-logo"></i></a>
+                            <a href="https://www.linkedin.com/company/jasunngrowthsolutions" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10"><i class="ph-fill ph-linkedin-logo"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2 text-xl font-bold text-white">JASUNN Growth Solutions</div>
+                <div class="text-xs text-gray-500 text-center"><p>&copy; 2026 JASUNN Growth Solutions. All rights reserved.</p></div>
+                <div class="flex gap-6 text-xs text-gray-500">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="refund-policy.html" class="hover:text-white transition-colors">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Base -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-dark-bg/80', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'shadow-sm', 'py-3');
+                    navbar.classList.remove('py-4');
+                } else {
+                    navbar.classList.remove('bg-dark-bg/80', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'shadow-sm', 'py-3');
+                    navbar.classList.add('py-4');
+                }
+            });
+
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                    mobileBtn.innerHTML = '<i class="ph ph-list text-2xl"></i>';
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                    mobileBtn.innerHTML = '<i class="ph ph-x text-2xl"></i>';
+                }
+            }
+
+            mobileBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOnScroll = new IntersectionObserver(entries => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            const form = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const successMsg = document.getElementById('form-success');
+            const errorMsg = document.getElementById('form-error');
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyuJdaN18YUjbcD0kKj9SEoY8o0rjiMA0_qB5cVXp-VEKHtTm4v5zAB5Zy7vea6taKq/exec';
+
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="ph ph-spinner-gap animate-spin"></i> Sending...';
+                    successMsg.classList.add('hidden');
+                    errorMsg.classList.add('hidden');
+
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        whatsapp: document.getElementById('phone').value,
+                        business: document.getElementById('business').value,
+                        goal: document.getElementById('goal').value
+                    };
+
+                    fetch(scriptURL, { method: "POST", body: JSON.stringify(formData) })
+                    .then(res => res.json())
+                    .then(data => { successMsg.classList.remove('hidden'); form.reset(); })
+                    .catch(err => { errorMsg.classList.remove('hidden'); })
+                    .finally(() => { submitBtn.disabled = false; submitBtn.innerHTML = originalText; });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
