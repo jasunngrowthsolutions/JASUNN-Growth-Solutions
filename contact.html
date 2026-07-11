@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZSS99Y1QH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DZSS99Y1QH');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | JASUNN Growth Solutions</title>
+    
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], },
+                    colors: {
+                        brand: { 50: '#eff6ff', 100: '#dbeafe', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 900: '#1e3a8a', 950: '#0b1120', },
+                        dark: { bg: '#050505', card: '#111111', border: '#222222' }
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.25) 0%, rgba(5, 5, 5, 1) 60%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 5px; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-500 selection:text-white">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold tracking-tight text-white flex items-center gap-2 z-50">
+                JASUNN<span class="font-light opacity-60"> Growth Solutions</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8 bg-white/5 backdrop-blur-md px-8 py-3 rounded-full border border-white/10">
+                <a href="about.html" class="text-sm text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="index.html#services" class="text-sm text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="portfolio.html" class="text-sm text-gray-300 hover:text-white transition-colors">Portfolio</a>
+                <a href="index.html#pricing" class="text-sm text-gray-300 hover:text-white transition-colors">Pricing</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="contact.html" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white bg-brand-600 rounded-full hover:bg-brand-500 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] border border-brand-500">Contact Us</a>
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 z-50"><i class="ph ph-list text-2xl"></i></button>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="mobile-menu" class="fixed inset-0 bg-dark-bg/95 backdrop-blur-xl flex-col items-center justify-center gap-8 hidden z-40">
+        <a href="about.html" class="mobile-link text-2xl font-medium text-white">About Us</a>
+        <a href="index.html#services" class="mobile-link text-2xl font-medium text-white">View Services</a>
+        <a href="portfolio.html" class="mobile-link text-2xl font-medium text-white">Our Portfolio</a>
+        <a href="index.html#pricing" class="mobile-link text-2xl font-medium text-white">View Pricing</a>
+        <a href="contact.html" class="mobile-link px-8 py-3 mt-4 text-lg font-medium text-brand-400 bg-brand-600/20 rounded-full">Contact Us</a>
+    </div>
+
+    <main id="main-content">
+        <header class="relative pt-40 pb-20 lg:pt-48 lg:pb-24 bg-hero-glow border-b border-white/5">
+            <div class="max-w-7xl mx-auto px-6 relative z-10 text-center reveal">
+                <p class="text-sm uppercase tracking-widest text-brand-400 font-bold mb-4">Start A Project</p>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
+                    Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-white font-serif italic font-normal">Talk.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                    Have an ambitious project in mind? We're ready to help you build trust and drive growth. Reach out directly or fill the form below.
+                </p>
+            </div>
+        </header>
+
+        <section class="py-24 bg-dark-bg relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Contact Cards -->
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="glass rounded-3xl p-8 border border-white/10 reveal hover:border-brand-500/30 transition-colors">
+                            <div class="w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center mb-6"><i class="ph-fill ph-whatsapp-logo text-2xl text-green-500"></i></div>
+                            <p class="text-xl font-bold mb-2 text-white">WhatsApp Direct</p>
+                            <p class="text-sm text-gray-400 mb-4">Fastest way to reach our team.</p>
+                            <a href="https://wa.me/918738873878" target="_blank" rel="noopener noreferrer" class="text-brand-400 font-semibold hover:text-brand-300">+91 87388 73878</a>
+                        </div>
+                        <div class="glass rounded-3xl p-8 border border-white/10 reveal delay-100 hover:border-brand-500/30 transition-colors">
+                            <div class="w-12 h-12 rounded-full bg-brand-500/10 flex items-center justify-center mb-6"><i class="ph-fill ph-map-pin text-2xl text-brand-400"></i></div>
+                            <p class="text-xl font-bold mb-2 text-white">Location</p>
+                            <p class="text-sm text-gray-400">Gurugram, Haryana, India</p>
+                        </div>
+                        <div class="glass rounded-3xl p-8 border border-white/10 reveal delay-200">
+                            <p class="text-lg font-bold mb-4 text-white">Connect Online</p>
+                            <div class="flex gap-4">
+                                <a href="https://www.linkedin.com/company/jasunngrowthsolutions" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-500 transition-colors"><i class="ph-fill ph-linkedin-logo text-xl"></i></a>
+                                <a href="https://www.instagram.com/jasunngrowthsolutions" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-500 transition-colors"><i class="ph-fill ph-instagram-logo text-xl"></i></a>
+                                <a href="https://x.com/Jasunnbyharsh" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-500 transition-colors"><i class="ph-fill ph-x-logo text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Form Section -->
+                    <div class="lg:col-span-2 bg-dark-card rounded-3xl p-8 md:p-12 border border-brand-500/30 reveal shadow-[0_0_40px_rgba(37,99,235,0.05)]">
+                        <h3 class="text-3xl font-bold mb-8">Send a Message</h3>
+                        <form id="contact-page-form" class="flex flex-col gap-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">Full Name *</label>
+                                    <input type="text" id="page-name" required class="bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">Email Address *</label>
+                                    <input type="email" id="page-email" required class="bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">WhatsApp Number *</label>
+                                    <input type="tel" id="page-phone" required class="bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">Business/Agency Name</label>
+                                    <input type="text" id="page-business" class="bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-gray-500 font-semibold mb-2">What's your main goal? *</label>
+                                <textarea id="page-goal" required rows="4" class="bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-sm text-white focus:outline-none focus:border-brand-500 transition-colors w-full resize-none"></textarea>
+                            </div>
+                            
+                            <button type="submit" id="page-submit-btn" class="bg-brand-600 hover:bg-brand-500 text-white rounded-xl px-8 py-4 text-sm font-bold transition-colors w-full mt-4 flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+                                Submit Request <i class="ph-bold ph-paper-plane-tilt"></i>
+                            </button>
+
+                            <div id="page-form-success" class="hidden bg-green-500/20 text-green-400 border border-green-500/30 p-4 rounded-xl text-sm font-medium mt-2 text-center">
+                                Success! We've received your request. We'll be in touch shortly.
+                            </div>
+                            <div id="page-form-error" class="hidden bg-red-500/20 text-red-400 border border-red-500/30 p-4 rounded-xl text-sm font-medium mt-2 text-center">
+                                Oops! Something went wrong. Please use the WhatsApp button instead.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer without the form to avoid duplication on Contact page -->
+    <footer class="bg-[#020202] pt-16 pb-10 border-t border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2 pr-0 md:pr-12">
+                    <h3 class="text-xl font-bold mb-4">JASUNN Growth Solutions</h3>
+                    <p class="text-gray-400 text-sm mb-6 max-w-sm">Premium web development and digital growth for ambitious businesses.</p>
+                    <div class="flex items-center gap-2">
+                        <a href="https://www.instagram.com/jasunngrowthsolutions" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="https://www.linkedin.com/company/jasunngrowthsolutions" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i class="ph-fill ph-linkedin-logo"></i></a>
+                        <a href="https://wa.me/918738873878" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"><i class="ph-fill ph-whatsapp-logo"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-6">Services</p>
+                    <ul class="space-y-4">
+                        <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Web Design</a></li>
+                        <li><a href="index.html#services" class="text-sm text-gray-400 hover:text-white transition-colors">Google Profile</a></li>
+                        <li><a href="index.html#pricing" class="text-sm text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-white font-semibold mb-6">Company</p>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="portfolio.html" class="text-sm text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="text-sm text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-xs text-gray-500 text-center"><p>&copy; 2026 JASUNN Growth Solutions. All rights reserved.</p></div>
+                <div class="flex gap-6 text-xs text-gray-500">
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="terms-of-use.html" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="refund-policy.html" class="hover:text-white transition-colors">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-dark-bg/80', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'shadow-sm', 'py-3');
+                    navbar.classList.remove('py-4');
+                } else {
+                    navbar.classList.remove('bg-dark-bg/80', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'shadow-sm', 'py-3');
+                    navbar.classList.add('py-4');
+                }
+            });
+
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                if (isOpen) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                    mobileBtn.innerHTML = '<i class="ph ph-list text-2xl"></i>';
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    document.body.style.overflow = 'hidden';
+                    mobileBtn.innerHTML = '<i class="ph ph-x text-2xl"></i>';
+                }
+            }
+            mobileBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOnScroll = new IntersectionObserver(entries => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            // Main Contact Page Form
+            const form = document.getElementById('contact-page-form');
+            const submitBtn = document.getElementById('page-submit-btn');
+            const successMsg = document.getElementById('page-form-success');
+            const errorMsg = document.getElementById('page-form-error');
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyuJdaN18YUjbcD0kKj9SEoY8o0rjiMA0_qB5cVXp-VEKHtTm4v5zAB5Zy7vea6taKq/exec';
+
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="ph ph-spinner-gap animate-spin"></i> Sending...';
+                    successMsg.classList.add('hidden');
+                    errorMsg.classList.add('hidden');
+
+                    const formData = {
+                        name: document.getElementById('page-name').value,
+                        email: document.getElementById('page-email').value,
+                        whatsapp: document.getElementById('page-phone').value,
+                        business: document.getElementById('page-business').value,
+                        goal: document.getElementById('page-goal').value
+                    };
+
+                    fetch(scriptURL, { method: "POST", body: JSON.stringify(formData) })
+                    .then(res => res.json())
+                    .then(data => { successMsg.classList.remove('hidden'); form.reset(); })
+                    .catch(err => { errorMsg.classList.remove('hidden'); })
+                    .finally(() => { submitBtn.disabled = false; submitBtn.innerHTML = originalText; });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
