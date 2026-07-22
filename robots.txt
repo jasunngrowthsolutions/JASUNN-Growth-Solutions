@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jasunngrowthsolutions.com/sitemap.xml
+
+# Sensitive paths only
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+Crawl-delay: 1
