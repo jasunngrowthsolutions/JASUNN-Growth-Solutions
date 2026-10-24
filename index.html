@@ -221,6 +221,45 @@
             outline: 2px solid var(--tw-colors-ink);
             outline-offset: 4px;
         }
+
+        /* Coordinated Hero Branding Lockup */
+        .hero-brand-lockup {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+        }
+        .hero-brand-wordmark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 15.5vw, 13.5rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            color: rgba(17, 17, 17, 0.08);
+            white-space: nowrap;
+            user-select: none;
+            pointer-events: none;
+        }
+        .hero-brand-brace {
+            font-weight: 600;
+            opacity: 0.55;
+            transform: translateY(-0.04em);
+        }
+        .hero-brand-pill {
+            position: absolute;
+            left: 50%;
+            top: 97%;
+            transform: translate(-50%, -30%);
+            z-index: 20;
+            white-space: nowrap;
+        }
     </style>
 
     <!-- Comprehensive JSON-LD Schema -->
@@ -431,17 +470,16 @@
                 <div class="grain-overlay" aria-hidden="true"></div>
             </div>
 
-            <!-- Giant Oversized Wordmark -->
-            <div class="absolute top-[15%] sm:top-[14%] lg:top-[12%] w-full flex justify-center -z-10 pointer-events-none select-none">
-                <span class="font-serif text-[18vw] lg:text-[16vw] font-[800] tracking-tight leading-[1.15] text-ink/[0.03] whitespace-nowrap pb-8" aria-hidden="true">
-                    JASUNN
-                </span>
-            </div>
-
-            <div class="relative z-10 max-w-4xl mx-auto text-center mt-14 sm:mt-20 reveal">
-                <span class="inline-block py-2 px-6 rounded-pill border border-borderLight text-xs font-bold uppercase tracking-widest mb-8 bg-canvas shadow-sm relative z-20">
-                    Growth Solutions &middot; Gurugram, India
-                </span>
+            <div class="relative z-10 max-w-4xl mx-auto text-center mt-6 sm:mt-10 reveal w-full">
+                <!-- Coordinated JASUNN GROWTH SOLUTIONS Branding Lockup -->
+                <div class="hero-brand-lockup">
+                    <span class="hero-brand-wordmark" aria-hidden="true">
+                        <span class="hero-brand-brace">{</span><span>JASUNN</span><span class="hero-brand-brace">}</span>
+                    </span>
+                    <span class="hero-brand-pill inline-block py-2 px-6 rounded-pill border border-borderLight text-xs font-bold uppercase tracking-widest bg-canvas shadow-sm">
+                        Growth Solutions
+                    </span>
+                </div>
                 
                 <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-balance mb-6 leading-[1.08] relative z-20">
                     Build Trust.<br/>Drive Growth.
